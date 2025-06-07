@@ -43,3 +43,19 @@ function closeBible() {
     verseBox.style.display = 'none';    // hide the verse box
     return;
 }
+
+fetch('api/verses')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Verses from DB: ', data);
+        //Dipslay verses in your HTML as you want, e.g.:
+        const container = document.getElementById('verses-container');
+        data.forEach(verse => {
+            const p = document.createElement('p');
+            p.textContent = `${verse.book}:${verse.chapter} ${verse.verse_number} - ${verse.text}`;
+            container.appendChild(p);
+        });
+    })
+
+    .catch(err => console.error('Error fetching verses: ', err));
+    

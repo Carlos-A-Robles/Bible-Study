@@ -14,7 +14,7 @@ const versesToStudy = [
     {
         reference: "2 Timothy 3:16",
         text: "All Scripture is God breathed and useful for teaching, rebuking, correcting and training in righteousness."
-    }
+    } //Verified on project once more.
 ]
 
 
